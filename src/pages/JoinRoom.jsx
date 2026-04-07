@@ -33,7 +33,7 @@ function JoinRoom() {
             try {
                 
                 // Save name to localStorage
-                localStorage.setItem("name", name);
+                localStorage.setItem("participant-name", name);
 
                 // Navigate to the room
                 navigate(`/room/${roomCode}`);

@@ -4,7 +4,7 @@ import { serverEndpoint } from "../config/appConfig";
 import axios from 'axios'
 
 function CreateRoom(){
-const [name,setName] = useState(null);
+const [name,setName] = useState("");
 const [errors, setErrors] = useState({});
 const [loading, setLoading] = useState(false);
 const navigate = useNavigate();
@@ -13,7 +13,7 @@ const validate = () => {
     let isValid = true;
     const newErrors = {};
 
-    if(name.length === 0){
+    if(name.trim().length === 0){
         isValid = false;
         newErrors.name= "name is mandatory";
     }
@@ -30,6 +30,7 @@ const handleSubmit = async () => {
             },{
                 withCredentials:true
             });
+            localStorage.setItem("participant-name", name);
             navigate(`/room/${response.data.roomCode}`);
         }catch(error){
             console.log(error);
