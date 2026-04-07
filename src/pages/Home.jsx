@@ -12,10 +12,10 @@ function Home() {
                 If you are a participant, then Click on Join Room.
                 Ask fo room code from the host of the meeting.
             </p>
-            <Link to="create" className='btn btn-primary me-1'>
+            <Link to="/create" className='btn btn-primary me-1'>
                 Create Room
             </Link>
-            <Link to="join" className='btn btn-success'>
+            <Link to="/join" className='btn btn-success'>
                 Join Room
             </Link>
         </div>
