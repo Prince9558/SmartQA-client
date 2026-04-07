@@ -21,7 +21,7 @@ function Room() {
       setTopQuestions(response.data || []);
     }catch(error){
       console.log(error);
-      setErrors({ message: 'Unable to fetch top questions'});
+      setErrors({ message: error?.response?.data?.message || 'Unable to fetch top questions'});
     }
   };
 
