@@ -81,7 +81,7 @@ function Room() {
     return (
         <div className="container text-center py-5">
             <h3>Error!</h3>
-            <p>errors.message</p>
+            <p>{errors.message}</p>
         </div>
     );
   }
