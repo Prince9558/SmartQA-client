@@ -6,9 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter } from 'react-router-dom';
 
+const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || "missing-client-id";
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId={clientId}>
       <BrowserRouter>
       <App />
       </BrowserRouter>
